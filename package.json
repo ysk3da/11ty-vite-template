@@ -1,32 +1,65 @@
 {
   "name": "11ty-vite-template",
   "version": "1.0.0",
-  "description": "",
+  "description": "11ty and vite",
   "main": "index.js",
   "scripts": {
     "dev": "run-p dev:*",
     "dev:eleventy": "npx eleventy --serve",
     "dev:vite": "npx vite",
     "build": "run-s build:*",
-    "build:eleventy": "NODE_ENV=production npx eleventy",
-    "build:vite": "NODE_ENV=production npx vite build",
+    "build:eleventy": "cross-env NODE_ENV=production npx eleventy",
+    "build:vite": "cross-env NODE_ENV=production npx vite build",
+    "build:prettier": "npx prettier --write ./dist/**/*.html",
     "lint": "run-s lint:*",
-    "lint:ejs": "npx ejslint 'src/**/*.ejs'"
+    "lint:ejs": "npx ejslint 'src/**/*.ejs'",
+    "lint:eslint": "npx eslint --cache --fix ./src/scripts/ && npx prettier --write ./src/",
+    "imgmin": "node libs/imagemin.mjs",
+    "imgminWebp": "node libs/imagemin-webp.mjs",
+    "css2scss": "node libs/css2scss.js",
+    "csv2json": "node libs/csv2json.js",
+    "json2csv": "node libs/json2csv.js"
   },
-  "keywords": [],
-  "author": "",
+  "keywords": [
+    "11ty",
+    "eleventy",
+    "vite",
+    "imagemin",
+    "webp",
+    "csv2json",
+    "json2csv",
+    "css2scss"
+  ],
+  "author": "ysk3da",
   "license": "ISC",
   "devDependencies": {
-    "@11ty/eleventy": "^2.0.0",
+    "@11ty/eleventy": "^2.0.1",
+    "@11ty/eleventy-server-browsersync": "^1.0.2",
+    "@tsconfig/node18": "^2.0.1",
+    "@types/node": "^20.3.0",
     "autoprefixer": "^10.4.14",
     "cross-env": "^7.0.3",
+    "cssnano": "^6.0.1",
+    "csv2json": "^2.0.2",
     "ejs-lint": "^2.0.0",
     "eleventy-sass": "^2.2.1",
+    "eslint-config-prettier": "^8.8.0",
+    "eslint-import-resolver-alias": "^1.1.2",
+    "imagemin-gifsicle": "^7.0.0",
+    "imagemin-keep-folder": "^5.3.2",
+    "imagemin-mozjpeg": "^10.0.0",
+    "imagemin-pngquant": "^9.0.2",
+    "imagemin-svgo": "^10.0.1",
+    "imagemin-webp": "^8.0.0",
+    "json2csv": "^6.0.0-alpha.2",
+    "mqpacker": "^7.0.0",
     "npm-run-all": "^4.1.5",
-    "postcss": "^8.4.21",
-    "vite": "^4.2.1"
+    "postcss": "^8.4.24",
+    "prettier": "^2.8.8",
+    "styleflux-web": "^0.0.2",
+    "vite": "^4.3.9"
   },
   "dependencies": {
-    "jquery": "^3.6.4"
+    "jquery": "^3.7.0"
   }
 }

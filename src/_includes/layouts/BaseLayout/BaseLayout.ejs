@@ -1,17 +1,45 @@
+---
+title: "デフォルトのタイトル"
+description: "デフォルトのディスクリプション"
+keywords: "キーワード1,キーワード2,キーワード3"
+ogurl: "https://example.com"
+ogtype: "website"
+ogtitle: "デフォルトのOGPタイトル"
+ogdescription: "デフォルトのOGPディスクリプション"
+ogsitename: "OGPサイト名"
+ogimage: "https://example.com/images/sample.jpg"
+twittercard: "summary_large_image"
+twitterAccountName: "Twitterのアカウント名"
+---
 <!DOCTYPE html>
 <html lang="ja">
+
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <title><%= title %></title>
+  <meta name="description" content="<%= description %>">
+  <meta name="keywords" content="<%= keywords %>">
+  <meta property="og:url" content="<%= ogurl %>" />
+  <meta property="og:type" content="<%= ogtype %>" />
+  <meta property="og:title" content="<%= ogtitle %>" />
+  <meta property="og:description" content="<%= ogdescription %>" />
+  <meta property="og:site_name" content="<%= ogsitename %>" />
+  <meta property="og:image" content="<%= ogimage %>" />
+  <meta name="twitter:card" content="<%= twittercard %>" />
+  <meta name="twitter:site" content="<%= twitterAccountName %>" />
+  <!-- <link rel="icon" href="/favicon.ico"> -->
+  <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
-  <%- content %>
+  <%- content -%>
   <% if(build.env === "production") { %>
   <script type="module" src="./js/index.js"></script>
   <% } else { %>
   <script type="module" src="http://localhost:5173/src/client/index.js"></script>
   <% } %>
 </body>
+
 </html>
