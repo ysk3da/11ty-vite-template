@@ -2,7 +2,6 @@
   "name": "11ty-vite-template",
   "version": "1.0.0",
   "description": "11ty and vite",
-  "main": "index.js",
   "scripts": {
     "dev": "run-p dev:*",
     "dev:eleventy": "npx eleventy --serve",
