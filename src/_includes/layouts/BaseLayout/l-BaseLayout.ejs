@@ -31,10 +31,14 @@ twitterAccountName: "Twitterのアカウント名"
   <meta name="twitter:site" content="<%= twitterAccountName %>" />
   <!-- <link rel="icon" href="/favicon.ico"> -->
   <link rel="stylesheet" href="style.css">
+  <%- include('../l-head-preconnect.ejs', {props:{}}) %>
 </head>
 
 <body>
+  <%- include('./l-BaseHeader.ejs', {props:{}}) -%>
   <%- content -%>
+  <%- include('./l-BaseFooter.ejs', {props:{}}) -%>
+
   <% if(build.env === "production") { %>
   <script type="module" src="./js/index.js"></script>
   <% } else { %>

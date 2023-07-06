@@ -1,0 +1,17 @@
+@use "./variables" as *;
+
+@mixin mq-up($bp) {
+  @media (min-width: #{map-get($breakpoint, $bp)}) {
+    @content;
+  }
+}
+@mixin mq-down($bp) {
+  @media (max-width: #{map-get($breakpoint, $bp)}) {
+    @content;
+  }
+}
+@mixin mq-between($minBp, $maxBp) {
+  @media (min-width: #{map-get($breakpoint, $minBp)}) and (max-width: #{map-get($breakpoint, $maxBp)}) {
+    @content;
+  }
+}

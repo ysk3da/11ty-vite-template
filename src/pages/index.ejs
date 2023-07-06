@@ -1,8 +1,25 @@
 ---
-layout: layouts/BaseLayout/BaseLayout.ejs
+layout: layouts/BaseLayout/l-BaseLayout.ejs
 title: "タイトル"
 permalink: "index.html"
 ---
 <main>
-  メイン
+  <!-- imgタグのレスポンシブ対応// -->
+  <picture>
+    <source media="(min-width: <%= variables.breakpoints.sm %>)" width="1000" height="500" loading="lazy" decoding="async" srcset="https://placehold.jp/1000x500.png" />
+    <img src="https://placehold.jp/640x640.png" width="640" height="640" loading="lazy" decoding="async" alt="可能な限り記入" />
+  </picture>
+  <!-- //imgタグのレスポンシブ対応 -->
+  <%- include('../_includes/components/c-responsive-img.ejs', {props: {
+    // classNames: 'string', // optional
+    src: 'https://placehold.jp/640x640.png',
+    alt: '可能な限り記入',
+    width: 640,
+    height: 640,
+    loading: 'lazy', // optional
+    decoding: 'async', // optional img in first view only
+    children: `
+    <source media="(min-width: ${variables.breakpoints.sm})" width="1000" height="500" loading="lazy" decoding="async" srcset="https://placehold.jp/1000x500.png" />
+    `, // here , you add source tag you need
+  }}) -%>
 </main>

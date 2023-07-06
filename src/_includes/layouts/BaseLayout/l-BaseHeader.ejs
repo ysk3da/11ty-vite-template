@@ -1,0 +1,10 @@
+<%
+if(!typeof props){
+  const props = {
+    classNames: 'string',
+  }
+}
+%>
+<header class="l-base-header <%= props.classNames || null %>">
+  ヘッダー
+</header>

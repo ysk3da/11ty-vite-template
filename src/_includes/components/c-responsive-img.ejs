@@ -1,0 +1,29 @@
+<%
+/**
+  * 正直、これはコンポーネント化する必要はないと思われるが、サンプルとして記述している
+  * sourceタグの個数が一定でないため、sourceタグまで含めると変数が多くなりすぎるため、include側のソース汚染が酷くなることが理由
+  * 一応、sourceタグ部分をhtmlで挿入する形にしているが、各ページで記述したほうが簡潔である
+  */
+if(typeof props === 'undefined') {
+  const props = {
+    classNames: 'string', // optional
+    src: 'string',
+    alt: 'string',
+    width: 'number',
+    height: 'number',
+    loading: 'eager | lazy', // optional
+    decoding: 'async | sync | auto', // optional
+    children: `html`, // here , you add source tag you need
+  }
+}
+
+const loading = props.loading? `loading="${props.loading}` : null;
+const decoding = props.decoding? `decoding="${props.decoding}`: null;
+
+-%>
+<%# imgタグのレスポンシブ対応// %>
+<picture class="c-responsive-img <%= props.classNames || null %>">
+  <%- props.children -%>
+  <img src="<%= props.src %>" width="<%= props.width %>" height="<%= props.height %>" <%= loading %> <%= decoding %> alt="<%= props.alt %>" />
+</picture>
+<%# //imgタグのレスポンシブ対応 %>

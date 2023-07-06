@@ -1,0 +1,9 @@
+// for background image
+$imagePath: "./"; // dist内の該当CSSファイルから見た画像のパス。ページごとやコンポーネントごとにスタイルを分ける場合は注意
+
+// for media query
+$breakpoint: (
+  sm: "480px",
+  md: "820px",
+  lg: "1440px",
+);

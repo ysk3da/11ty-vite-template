@@ -1,4 +1,4 @@
 import $ from 'jquery';
 
-$('main').text('Jquery');
+$('main').append('Jquery');
 console.log('use jquery');
