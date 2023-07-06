@@ -1,0 +1,21 @@
+<%
+if(!props) {
+  const props = {
+    domainArray: [], // string[] -> ['string1','文字列２']
+  }
+}
+
+const domainArray = props.domainArray? props.domainArray : [
+  "https://www.googleadservices.com",
+  "https://www.google.co.jp",
+  "https://www.google.com",
+  "https://www.google-analytics.com",
+  "https://connect.facebook.net",
+  "https://www.googletagmanager.com"
+]
+
+-%>
+<% domainArray.map((domain, index) => { -%>
+<link rel="preconnect" href="<%= domain %>">
+<link rel="dns-prefetch" href="<%= domain %>">
+<% }) -%>
