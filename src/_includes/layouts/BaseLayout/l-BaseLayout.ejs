@@ -35,7 +35,10 @@ twitterAccountName: "Twitterのアカウント名"
 </head>
 
 <body>
+  <%- include('./l-BaseHeader.ejs', {props:{}}) -%>
   <%- content -%>
+  <%- include('./l-BaseFooter.ejs', {props:{}}) -%>
+
   <% if(build.env === "production") { %>
   <script type="module" src="./js/index.js"></script>
   <% } else { %>
