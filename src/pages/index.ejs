@@ -1,8 +1,13 @@
 ---
-layout: layouts/BaseLayout/BaseLayout.ejs
+layout: layouts/BaseLayout/l-BaseLayout.ejs
 title: "タイトル"
 permalink: "index.html"
 ---
 <main>
-  メイン
+  <!-- imgタグのレスポンシブ対応// -->
+  <picture class="c-responsive-img <%= props.classNames || null %>">
+    <source media="(max-width: 768px)" width="315" height="400" loading="lazy" srcset="./images/top/renew_top_img-001.png" />
+    <img src="./images/top/renew_top_img-001.png" width="980" height="550" loading="lazy" alt="可能な限り記入" />
+  </picture>
+  <!-- //imgタグのレスポンシブ対応 -->
 </main>
