@@ -1,0 +1,84 @@
+/**
+  * SASSには文字列の置換に関する関数が存在しないため次のような関数を定義して代用することができます。
+  * ※ 大文字と小文字は区別されます。
+  * @param1 第一引数: $substr , 置換前の文字列。// required
+  * @param2 第二引数: $newsubstr , 置換後の文字列。// required
+  * @param3 第三引数: $str , 元となる文字列。// required
+  * @param4 第四引数: $all , 初期値 false すべて置換するかどうか。
+  * falseの場合は最初に見つかった1つのみを置換する。
+  * @reutrn 置換された文字列。
+  */
+@function str-replace($substr, $newsubstr, $str, $all: false) {
+  $pos: str-index($str, $substr);
+
+  @while $pos != null {
+    $strlen: str-length($substr);
+    $start: str-slice($str, 0, $pos - 1);
+    $end: str-slice($str, $pos + $strlen);
+    $str: $start + $newsubstr + $end;
+
+    @if $all == true {
+      $pos: str-index($str, $substr);
+    } @else {
+      $pos: null;
+    }
+  }
+  @return $str;
+}
+
+//
+// String型をNumber型に変更する
+// @param string $string The string to be converted to a number
+// @return number - Updated numuber
+//
+@function number($string) {
+  $result: 0;
+  $decimal: 1;
+  $minus: false;
+  $float: false;
+
+  $len: str-length($string);
+
+  $map: (
+    "0": 0,
+    "1": 1,
+    "2": 2,
+    "3": 3,
+    "4": 4
+  );
+  $map: map-merge(
+    $map,
+    (
+      "5": 5,
+      "6": 6,
+      "7": 7,
+      "8": 8,
+      "9": 9
+    )
+  );
+
+  @for $i from 1 through $len {
+    $character: str-slice($string, $i, $i);
+    $number: map-get($map, $character);
+
+    @if $character == "-" {
+      $minus: true;
+    } @else if $character == "." {
+      $float: true;
+    } @else {
+      $result: $result * 10 + $number;
+    }
+
+    @if $float {
+      $decimal: $decimal * 10;
+    }
+  }
+
+  @if not $minus {
+    $result: calc($result / $decimal);
+  } @else {
+    $result: -calc($result / $decimal);
+  }
+
+  @return $result;
+}
