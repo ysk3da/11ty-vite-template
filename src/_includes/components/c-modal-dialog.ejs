@@ -1,0 +1,15 @@
+<%
+if(typeof props === 'undefined') { // この書き方でないとNG !propsや props === 'undefined' ではダメ
+  const props = {
+    classNames: 'string',
+  }
+}
+-%>
+<div class="c-modal-dialog">
+  <dialog class="" open>
+    <p>Greetings, one and all!</p>
+    <form method="dialog">
+      <button>OK</button>
+    </form>
+  </dialog>
+</div>
