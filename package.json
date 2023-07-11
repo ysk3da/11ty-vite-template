@@ -10,6 +10,7 @@
     "build:eleventy": "cross-env NODE_ENV=production npx eleventy",
     "build:vite": "cross-env NODE_ENV=production npx vite build",
     "build:prettier": "npx prettier --write ./dist/**/*.html",
+    "serve": "serve dist",
     "lint": "run-s lint:*",
     "lint:ejs": "npx ejslint 'src/**/*.ejs'",
     "lint:eslint": "npx eslint --cache --fix ./src/scripts/ && npx prettier --write ./src/",
@@ -60,6 +61,7 @@
   },
   "dependencies": {
     "jquery": "^3.7.0",
-    "ress": "^5.0.2"
+    "ress": "^5.0.2",
+    "serve": "^14.2.0"
   }
 }
