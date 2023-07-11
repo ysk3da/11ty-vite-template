@@ -1,4 +1,4 @@
-@use '../../../foundation' as *;
+@use "../../../foundation" as *;
 
 .c-form-modal-dialog {
   position: fixed;
@@ -21,4 +21,4 @@
   }
 }
 // 背景のスクロールを止める
-@include modalHelper('c-form-modal-dialog');
+@include modalHelper("c-form-modal-dialog");

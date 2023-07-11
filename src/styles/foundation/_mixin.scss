@@ -17,7 +17,7 @@
 }
 
 // フェードアップアニメーション
-@mixin fadeIn-up($duration: 300ms, $offsetY: 10px){
+@mixin fadeIn-up($duration: 300ms, $offsetY: 10px) {
   animation-duration: $duration;
   animation-name: fadeIn-up;
   animation-timing-function: ease-in-out;
@@ -35,8 +35,8 @@
 }
 
 // モーダル展開時に後ろの本体ページを固定する
-@mixin modalHelper($modalWrapClassName){
-  .#{$modalWrapClassName}{
+@mixin modalHelper($modalWrapClassName) {
+  .#{$modalWrapClassName} {
     overscroll-behavior: contain;
     overflow-y: scroll;
     scrollbar-width: none;
