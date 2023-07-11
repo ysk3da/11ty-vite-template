@@ -9,17 +9,19 @@ if(typeof props === 'undefined') { // この書き方でないとNG !propsや pr
   <!-- フォームを含むモーダルダイアログ -->
   <dialog id="favDialog">
     <form>
-      <p>
+      <div>
         <label>
           Favorite animal:
-          <select>
-            <option value="default">Choose…</option>
-            <option>Brine shrimp</option>
-            <option>Red panda</option>
-            <option>Spider monkey</option>
-          </select>
+          <div>
+            <select>
+              <option value="default">Choose…</option>
+              <option>Brine shrimp</option>
+              <option>Red panda</option>
+              <option>Spider monkey</option>
+            </select>
+          </div>
         </label>
-      </p>
+      </div>
       <div>
         <button value="cancel" formmethod="dialog">Cancel</button>
         <button id="confirmBtn" value="default">Confirm</button>
