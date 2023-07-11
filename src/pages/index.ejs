@@ -4,22 +4,14 @@ title: "タイトル"
 permalink: "index.html"
 ---
 <main>
-  <!-- imgタグのレスポンシブ対応// -->
-  <picture>
-    <source media="(min-width: <%= variables.breakpoints.sm %>)" width="1000" height="500" loading="lazy" decoding="async" srcset="https://placehold.jp/1000x500.png" />
-    <img src="https://placehold.jp/640x640.png" width="640" height="640" loading="lazy" decoding="async" alt="可能な限り記入" />
-  </picture>
-  <!-- //imgタグのレスポンシブ対応 -->
-  <%- include('../_includes/components/c-responsive-img.ejs', {props: {
-    // classNames: 'string', // optional
-    src: 'https://placehold.jp/640x640.png',
-    alt: '可能な限り記入',
-    width: 640,
-    height: 640,
-    loading: 'lazy', // optional
-    decoding: 'async', // optional img in first view only
-    children: `
-    <source media="(min-width: ${variables.breakpoints.sm})" width="1000" height="500" loading="lazy" decoding="async" srcset="https://placehold.jp/1000x500.png" />
-    `, // here , you add source tag you need
-  }}) -%>
+  <h1>This is TOP page</h1>
+  <div id="jquery-elm"></div>
+  <ul>
+    <li>
+      <a href="/img.html">レスポンシブ画像対応サンプル</a>
+    </li>
+    <li>
+      <a href="/dialog.html">dialogタグの使い方（モーダル）</a>
+    </li>
+  </ul>
 </main>
