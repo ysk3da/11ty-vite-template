@@ -4,9 +4,11 @@
 // html {
 
 // }
-// body {
-
-// }
+body {
+  // ページのコンテンツが少なくてもフッターを最下部に固定する
+  min-height: 100vh;
+  min-height: 100svh; // for Safari
+}
 //レスポンシブ用画像設定
 picture {
   display: block;

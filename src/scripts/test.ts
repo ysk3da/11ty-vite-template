@@ -1,3 +1,3 @@
 export const Test = () => {
-  console.log('test');
+  console.log('This is Test in test.ts');
 }

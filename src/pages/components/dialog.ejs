@@ -1,0 +1,25 @@
+---
+layout: layouts/BaseLayout/l-BaseLayout.ejs
+title: "ダイアログ（モーダル）のサンプル"
+permalink: "dialog.html"
+---
+<main>
+  <h1>ダイアログ（モーダル）のサンプル</h1>
+
+  <%- include('../../_includes/components/c-modal-dialog.ejs') %>
+  <%- include('../../_includes/components/c-form/c-form-modal-dialog.ejs') %>
+  <style>
+    /* リセットされていて見づらいので可視化 */
+    button {
+      border: 1px solid #000;
+      border-radius: 4px;
+      background-color: #f7f7f7;
+      padding: 0.25em 0.5em;
+    }
+  </style>
+
+  <div>
+    <p>下記URLを参考にしています。</p>
+    <a href="https://developer.mozilla.org/ja/docs/Web/HTML/Element/dialog" target="_blank" rel="noopener noreferrer">dialog: ダイアログ要素</a>
+  </div>
+</main>
