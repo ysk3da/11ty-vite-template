@@ -1,0 +1,10 @@
+<%
+if(!props) {
+  const props = {
+    classNames: 'string',
+  }
+}
+-%>
+<div class="c-test <%= props.classNames ?? null %>">
+  テスト
+</div>
