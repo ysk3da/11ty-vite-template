@@ -5,15 +5,15 @@ import imageminSvgo from "imagemin-svgo";
 import imageminMozjpeg from "imagemin-mozjpeg";
 import imageminGifsicle from "imagemin-gifsicle";
 
-const srcDir = "./src/images/**/*.{jpg,jpeg,png,gif,svg}";
-// const outDir = "./dist/images/**/*";
+const srcDir = "../src/images/**/*.{jpg,jpeg,png,gif,svg}";
+// const outDir = "../dist/images/**/*";
 
 // const convertWebp = (targetFiles) => {
 //   imagemin([targetFiles], {
 //     use: [imageminWebp({ quality: 75 })],
 //   });
 // };
-
+console.log("[start] ===== Images optimize...");
 imagemin([srcDir], {
   plugins: [
     imageminMozjpeg(),
@@ -26,5 +26,5 @@ imagemin([srcDir], {
   },
 }).then(() => {
   // convertWebp(outDir);
-  console.log("Images optimized!");
+  console.log("[finished] ===== Images optimized!");
 });

@@ -1,11 +1,11 @@
 <%
-if(typeof props === 'undefined') { // この書き方でないとNG !propsや props === 'undefined' ではダメ
+if(!props) {
   const props = {
     classNames: 'string',
   }
 }
 -%>
-<div class="c-modal-dialog">
+<div class="c-modal-dialog <%= props.classNames ?? null %>">
   <dialog class="" open>
     <p>Greetings, one and all!</p>
     <form method="dialog">
