@@ -25,27 +25,27 @@
   "devDependencies": {
     "@11ty/eleventy": "^2.0.1",
     "@11ty/eleventy-server-browsersync": "^1.0.2",
-    "@tsconfig/node18": "^18.2.0",
-    "@types/node": "^20.4.1",
-    "autoprefixer": "^10.4.14",
+    "@tsconfig/node18": "^18.2.2",
+    "@types/node": "^20.9.1",
+    "autoprefixer": "^10.4.16",
     "cross-env": "^7.0.3",
     "cssnano": "^6.0.1",
     "csv2json": "^2.0.2",
     "ejs-lint": "^2.0.0",
     "eleventy-sass": "^2.2.3",
-    "eslint-config-prettier": "^8.8.0",
+    "eslint-config-prettier": "^9.0.0",
     "eslint-import-resolver-alias": "^1.1.2",
     "mqpacker": "^7.0.0",
     "npm-run-all": "^4.1.5",
-    "postcss": "^8.4.25",
-    "prettier": "^3.0.0",
+    "postcss": "^8.4.31",
+    "prettier": "^3.1.0",
     "styleflux-web": "^0.0.2",
-    "vite": "^4.4.3"
+    "vite": "^5.0.0"
   },
   "dependencies": {
-    "jquery": "^3.7.0",
+    "jquery": "^3.7.1",
     "ress": "^5.0.2",
-    "serve": "^14.2.0",
-    "swiper": "^10.1.0"
+    "serve": "^14.2.1",
+    "swiper": "^11.0.4"
   }
 }
