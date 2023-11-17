@@ -1,0 +1,128 @@
+@use "../../foundation" as *;
+
+.row {
+  --gutter-x: 0; // default
+  --gutter-y: 0; // default
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: calc(-1 * var(--gutter-y)); // 子要素のgutter分をキャンセル
+  margin-right: calc(-0.5 * var(--gutter-x)); // 子要素のgutter分をキャンセル
+  margin-left: calc(-0.5 * var(--gutter-x)); // 子要素のgutter分をキャンセル
+  & > * {
+    flex-shrink: 0;
+    width: 100%;
+    max-width: 100%;
+    padding-right: calc(
+      var(--gutter-x) * 0.5
+    ); // デザインそのままを読めるように半分にする
+    padding-left: calc(
+      var(--gutter-x) * 0.5
+    ); // デザインそのままを読めるように半分にする
+    margin-top: var(--gutter-y);
+  }
+}
+
+@for $i from 1 through 10 {
+  $width: percentage(calc(1 / $i));
+  .row-cols-#{$i} {
+    > * {
+      width: $width;
+      flex: 0 0 auto; // 下記のショートハンド
+      // flex-grow: 0;
+      // flex-shrink: 0;
+      // flex-basis: auto;
+    }
+  }
+  .row-cols-sm-#{$i} {
+    > * {
+      @include mq-up(sm) {
+        width: $width;
+        flex: 0 0 auto;
+      }
+    }
+  }
+  .row-cols-md-#{$i} {
+    > * {
+      @include mq-up(md) {
+        width: $width;
+        flex: 0 0 auto;
+      }
+    }
+  }
+}
+
+// nowrap 相当として子要素を扱いたいときに付与する
+// wrapしなくなります。
+.col {
+  flex: 1 0 0%; // 下記のショートハンド
+  // flex-grow: 1;
+  // flex-shrink: 0;
+  // flex-basis: 0%;
+}
+
+// 隙間のコントロール
+// 下記のように必要な分だけ定義するか、↑の列のコントロールのように一括で定義してしまうか
+// row colのgutterカスタマイズ
+$guttersArr: (
+  0: 0,
+  // "1_75p": 1.75%,
+  // 2p: 2%,
+  // "2_5p": 2.5%,
+  // 5p: 5%,
+  // 10p: 10%,
+  10: 10px,
+  11: 11px,
+  15: 15px,
+  20: 20px,
+  30: 30px,
+  40: 40px,
+  45: 45px,
+  50: 50px,
+  60: 60px,
+  90: 90px,
+  120: 120px
+);
+@each $gutter, $value in $guttersArr {
+  .g-#{$gutter} {
+    --gutter-x: #{$value};
+    --gutter-y: #{$value};
+  }
+  .g-sm-#{$gutter} {
+    @include mq-up(sm) {
+      --gutter-x: #{$value};
+      --gutter-y: #{$value};
+    }
+  }
+  .g-md-#{$gutter} {
+    @include mq-up(md) {
+      --gutter-x: #{$value};
+      --gutter-y: #{$value};
+    }
+  }
+  .gx-#{$gutter} {
+    --gutter-x: #{$value};
+  }
+  .gx-sm-#{$gutter} {
+    @include mq-up(sm) {
+      --gutter-x: #{$value};
+    }
+  }
+  .gx-md-#{$gutter} {
+    @include mq-up(md) {
+      --gutter-x: #{$value};
+    }
+  }
+  .gy-#{$gutter} {
+    --gutter-y: #{$value};
+  }
+  .gy-sm-#{$gutter} {
+    @include mq-up(sm) {
+      --gutter-y: #{$value};
+    }
+  }
+  .gy-md-#{$gutter} {
+    @include mq-up(md) {
+      --gutter-y: #{$value};
+    }
+  }
+}

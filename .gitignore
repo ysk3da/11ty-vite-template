@@ -180,3 +180,9 @@ dist
 *.vsix
 
 ## added
+Tools/*
+!Tools/css2scss.js
+!Tools/csv2json.js
+!Tools/imagemin-webp.mjs
+!Tools/imagemin.mjs
+!Tools/json2csv.js

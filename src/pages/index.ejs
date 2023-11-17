@@ -15,4 +15,26 @@ permalink: "index.html"
     </li>
   </ul>
   <%- include('../_includes/components/c-test.ejs', {props: {}}) -%>
+
+  <section>
+    <h2>イベントのキャプチャとバブリング</h2>
+    <div class="div">
+      <ul class="row row-cols-3">
+        <% for(let i = 0; i < 10; i++) { %>
+        <li class="li" style="border: 10px solid #000;">
+          <!-- <a class="clickme" href="javascript:void(0);"> -->
+          <button type="button" class="clickme">
+            ここをクリック！！！
+          </button>
+          <!-- </a> -->
+        </li>
+        <% } %>
+      </ul>
+    </div>
+  </section>
+  <div id="div1">
+    <div id="div2">
+      <div id="div3" style="width:100px;height:100px;border:1px solid #555"></div>
+    </div>
+  </div>
 </main>
