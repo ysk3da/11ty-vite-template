@@ -5,8 +5,8 @@ import imageminSvgo from "imagemin-svgo";
 import imageminMozjpeg from "imagemin-mozjpeg";
 import imageminGifsicle from "imagemin-gifsicle";
 
-const srcDir = "./src/images/**/*.{jpg,jpeg,png,gif,svg}";
-const outDir = "./dist/images/**/*";
+const srcDir = "../src/images/**/*.{jpg,jpeg,png,gif,svg}";
+const outDir = "../dist/images/**/*";
 
 const convertWebp = (targetFiles) => {
   imagemin([targetFiles], {
